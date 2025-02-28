@@ -40,8 +40,8 @@ const Navigation = () => {
           <div className="hidden md:flex items-center gap-5">
             <Link className="text-sm font-medium hover:text-blue-500" href="/">Home</Link>
             <Link className="text-sm font-medium hover:text-blue-500" href="/post/Project">Properties</Link>
-            <Link className="text-sm font-medium hover:text-blue-500" href="/agents">Agents</Link>
-            <Link className="text-sm font-medium hover:text-blue-500" href="/favorites">Favorites</Link>
+            <Link className="text-sm font-medium hover:text-blue-500" href="/post/Blog">Blog</Link>
+            <Link className="text-sm font-medium hover:text-blue-500" href="/Contact">Contact</Link>
           </div>
         </div>
       </nav>

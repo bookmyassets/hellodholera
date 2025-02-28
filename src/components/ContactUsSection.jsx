@@ -1,11 +1,9 @@
-
-
 import React from "react";
 
 const ContactUsSection = () => {
 
   return (
-    <section className="py-32 bg-[#530904] text-white">
+    <section className="py-32 bg-amber-100 text-black">
       <div className="container">
         <div className="w-full flex justify-center items-center">
           <div className="w-full md:w-1/2 px-2">
@@ -15,7 +13,7 @@ const ContactUsSection = () => {
             >
               Finding your perfect property is just a click away!
             </h1>
-            <p className="text-xs md:text-sm mb-8 text-slate-100 text-center max-w-md mx-auto">
+            <p className="text-xs md:text-sm mb-8 text-slate-500 text-center max-w-md mx-auto">
             Start browsing our property listings today and take the first step towards making your homeownership dreams a reality.
             </p>
             <div className="flex justify-center">

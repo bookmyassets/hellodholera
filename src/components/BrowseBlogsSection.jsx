@@ -4,31 +4,31 @@ import Image from "next/image";
 import NotFound from "./ui/NotFound";
 import { PortableText } from "next-sanity";
 import { client } from "@/sanity/lib/client";
-import { projectQuery } from "@/sanity/lib/query";
+import { blogQuery } from "@/sanity/lib/query";
 
-const BrowsePropertiesSection = () => {
+const BrowseBlogsSection = () => {
   // Hello Dholera brand colors from the logo
   const brandColors = {
     maroon: "#650000", // Deep maroon/burgundy background
     gold: "#FDB913",   // Bright yellow/gold for text and accents
   };
 
-  const [projects, setProjects] = useState([]);
+  const [blogs, setblogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchblogs = async () => {
       try {
-        const fetchedProjects = await client.fetch(projectQuery);
-        setProjects(fetchedProjects);
+        const fetchedblogs = await client.fetch(blogQuery);
+        setblogs(fetchedblogs);
       } catch (error) {
-        console.error("Error fetching projects:", error);
+        console.error("Error fetching blogs:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProjects();
+    fetchblogs();
   }, []);
 
   if (loading) {
@@ -39,7 +39,7 @@ const BrowsePropertiesSection = () => {
             <div className="text-center">
               <div className="w-16 h-16 border-4 border-t-4 rounded-full animate-spin mx-auto mb-4"
                 style={{ borderColor: `${brandColors.gold}`, borderTopColor: brandColors.maroon }}></div>
-              <p className="text-lg" style={{ color: brandColors.maroon }}>Loading projects...</p>
+              <p className="text-lg" style={{ color: brandColors.maroon }}>Loading blogs...</p>
             </div>
           </div>
         </div>
@@ -47,8 +47,8 @@ const BrowsePropertiesSection = () => {
     );
   }
 
-  // Show only 3 projects for the featured section
-  const featuredProjects = projects.slice(0, 3);
+  // Show only 3 blogs for the featured section
+  const featuredblogs = blogs.slice(0, 3);
 
   return (
     <section className="py-12 md:py-24 px-6 md:px-36 bg-gray-50">
@@ -56,47 +56,47 @@ const BrowsePropertiesSection = () => {
         <div className="w-full px-2 mb-10 text-center">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl mb-3 relative inline-block pb-2"
               style={{ color: brandColors.maroon }}>
-            Featured Projects
+            Featured blogs
             <span className="absolute bottom-0 left-1/4 right-1/4 h-1 rounded-full" 
                   style={{ backgroundColor: brandColors.gold }}></span>
           </h1>
           <p className="text-sm md:text-base max-w-2xl mx-auto text-gray-600 mt-4">
-            Discover some of our top projects in Dholera. Exclusive opportunities await.
+            Discover some of our top blogs in Dholera. Exclusive opportunities await.
           </p>
         </div>
 
-        {featuredProjects.length > 0 ? (
+        {featuredblogs.length > 0 ? (
           <div className="px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProjects.map((project) => (
+            {featuredblogs.map((blog) => (
               <div
-                key={project._id}
+                key={blog._id}
                 className="rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl hover:-translate-y-1"
                 style={{ backgroundColor: "white" }}
               >
                 <div className="relative h-64">
                   <Image
-                    src={project.imageUrl}
-                    alt={project.title}
+                    src={blog.imageUrl}
+                    alt={blog.title}
                     fill
                     className="object-cover"
                   />
                   <div className="absolute inset-0 flex items-end opacity-0 hover:opacity-100 transition-opacity duration-300"
                        style={{ background: `linear-gradient(to top, ${brandColors.maroon}CC, transparent)` }}>
                     <div className="p-4 text-white w-full">
-                      <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+                      <h3 className="text-xl font-bold mb-1">{blog.title}</h3>
                     </div>
                   </div>
                 </div>
                 
                 <div className="p-5">
-                  <h3 className="text-xl font-bold mb-3" style={{ color: brandColors.maroon }}>{project.title}</h3>
+                  <h3 className="text-xl font-bold mb-3" style={{ color: brandColors.maroon }}>{blog.title}</h3>
                   <div className="text-sm mb-4 line-clamp-3 text-gray-600">
-                    <PortableText value={project.body} />
+                    <PortableText value={blog.body} />
                   </div>
-                  <Link href={`/post/${project.slug?.current}`} passHref>
+                  <Link href={`/post/${blog.slug?.current}`} passHref>
                     <button className="w-full px-4 py-2 text-white transition-colors duration-300 rounded-md" 
                             style={{ backgroundColor: brandColors.gold }}>
-                      View Project
+                      View blog
                     </button>
                   </Link>
                 </div>
@@ -107,12 +107,12 @@ const BrowsePropertiesSection = () => {
           <NotFound />
         )}
 
-        {projects.length > 3 && (
+        {blogs.length > 3 && (
           <div className="mt-10 flex justify-center">
-            <Link href="/post/projects">
+            <Link href="/post/blogs">
               <button className="px-6 py-3 text-white rounded-md transition-transform hover:scale-105"
                       style={{ backgroundColor: brandColors.maroon, boxShadow: `0 4px 0 ${brandColors.gold}` }}>
-                Browse More Projects
+                Browse More blogs
               </button>
             </Link>
           </div>
@@ -122,4 +122,4 @@ const BrowsePropertiesSection = () => {
   );
 };
 
-export default BrowsePropertiesSection;
+export default BrowseBlogsSection;

@@ -2,8 +2,8 @@
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-import { urlFor } from "@/sanity/lib/image"; // Make sure you have this utility
-/* import CostSheet from "@/components/costSheet"; */
+import { urlFor } from "@/sanity/lib/image"; 
+import CostSheet from "@/components/costSheet";
 
 
 const PostDetail = ({ post }) => {
@@ -71,7 +71,7 @@ const PostDetail = ({ post }) => {
             {post.categories.map((category) => (
               <span 
                 key={category._id}
-                className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-sm"
+                className="bg-gray-100 text-black px-3 py-1 rounded-full text-sm"
               >
                 {category.title}
               </span>
@@ -81,10 +81,10 @@ const PostDetail = ({ post }) => {
 
         {/* Blog Body */}
       
-        <div className="prose max-w-4xl mx-auto pt-28 text-lg dark:text-gray-200">
+        <div className="prose max-w-4xl mx-auto pt-28 text-lg text-black">
           <PortableText value={post.body} components={components}/>
           
-         {/*  { isProject && <CostSheet/> } */}
+          { isProject && <CostSheet/> } 
         </div>
   </>
 

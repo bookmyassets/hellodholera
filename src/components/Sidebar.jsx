@@ -36,28 +36,28 @@ return (
             <li>
               <Link
                 onClick={handleMenu}
-                href="/properties"
+                href="/post/Project"
                 className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100  group"
               >
-                <span className="font-medium text-sm">{("properties")}</span>
+                <span className="font-medium text-sm">Properties</span>
               </Link>
             </li>
             <li>
               <Link
                 onClick={handleMenu}
-                href="/agents"
+                href="/post/Blog"
                 className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100  group"
               >
-                <span className="font-medium text-sm">{("agents")}</span>
+                <span className="font-medium text-sm">Blog</span>
               </Link>
             </li>
             <li>
               <Link
                 onClick={handleMenu}
-                href="/favorites"
+                href="/Contact"
                 className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100  group"
               >
-                <span className="font-medium text-sm">{("favorite")}</span>
+                <span className="font-medium text-sm">Contact</span>
               </Link>
             </li>
             

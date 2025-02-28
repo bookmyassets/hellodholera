@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
+
 const Footer = () => {
   return (
-    <footer className="border-t py-10">
+    <footer className="border-t bg-[#530904] text-[#ffb400] py-10 px-6 md:px-36">
       <div className="container">
         <div className="w-full flex flex-wrap justify-between px-2">
           <h1 className="font-bold font-sans text-2xl md:text-3xl w-full md:w-1/2 mb-10 md:mb-0">
@@ -15,7 +16,7 @@ const Footer = () => {
                 <Link href="/" className="text-sm md:text-base hover:underline">Home</Link>
                 <Link href="/post/Project" className="text-sm md:text-base hover:underline">Properties</Link>
                 <Link href="/agents" className="text-sm md:text-base hover:underline">Agents</Link>
-                <Link href="/favorites" className="text-sm md:text-base hover:underline">Favorites</Link>
+                <Link href="/Contact" className="text-sm md:text-base hover:underline">contact</Link>
               </div>
             </div>
             <div>
@@ -35,5 +36,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
