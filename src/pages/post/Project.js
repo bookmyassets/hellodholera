@@ -8,7 +8,7 @@ import { PortableText } from "next-sanity";
 export default function Projects({ projects }) {
   // Hello Dholera brand colors
   const brandColors = {
-    maroon: "#650000",
+    maroon: "#530904",
     gold: "#FDB913",
   };
 

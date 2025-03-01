@@ -13,7 +13,7 @@ return (
         }`}
         aria-label="Sidebar"
       >
-        <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50">
+        <div className="h-full px-3 py-4 overflow-y-auto bg-[#530904]">
           <div className="flex items-center p-2 my-5 justify-between">
             <Link
               onClick={handleMenu}
