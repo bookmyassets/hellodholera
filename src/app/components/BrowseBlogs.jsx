@@ -96,7 +96,7 @@ const BrowseBlogsSection = () => {
                   <div className="text-sm mb-4 line-clamp-3 text-gray-600">
                     <PortableText value={blog.body} />
                   </div>
-                  <Link href={`/post/${blog.slug?.current}`} passHref>
+                  <Link href={`/posts/${blog.slug?.current}`} passHref>
                     <button className="w-full px-4 py-2 text-white transition-colors duration-300 rounded-md" 
                             style={{ backgroundColor: brandColors.gold }}>
                       View blog
@@ -112,7 +112,7 @@ const BrowseBlogsSection = () => {
 
         {blogs.length > 3 && (
           <div className="mt-10 flex justify-center">
-            <Link href="/post/blogs">
+            <Link href="/posts/blogs">
               <button className="px-6 py-3 text-white rounded-md transition-transform hover:scale-105"
                       style={{ backgroundColor: brandColors.maroon, boxShadow: `0 4px 0 ${brandColors.gold}` }}>
                 Browse More blogs
