@@ -149,7 +149,7 @@ export default function RootLayout({ children }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden bg-white/10 transition-all delay-75 backdrop-blur-md"
+              className="md:hidden bg-white transition-all delay-75 backdrop-blur-md"
             >
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <Link
