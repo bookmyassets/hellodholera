@@ -114,7 +114,7 @@ export default function CostSheet() {
       const formattedPlotTotalPayment = formatIndianNumber(plotTotalPayment);
 
       // Table with details
-      doc.autoTable({
+      autoTable(doc,{
         startY: startY,
         body: [
           ['Name', name],
@@ -143,7 +143,7 @@ export default function CostSheet() {
       doc.text('Additional Charges', pageWidth / 2, finalY, { align: "center" });
 
       // Table for Additional Charges
-      doc.autoTable({
+      autoTable(doc,{
         startY: finalY + 4,
         body: [
           ['Maintenance Charge (100 x Size)', `Rs. ${formattedMaintenanceCharge}`],
