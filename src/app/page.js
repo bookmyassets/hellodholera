@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Grid from "./components/Grid";
 import InvestmentForm from "./components/Form";
+import DholeraWebsite from "./components/HomeContent";
 
 
 const containerVariants = {
@@ -387,13 +388,14 @@ export default function Home() {
       initial="hidden"
       animate={scrollY > 100 ? "show" : "hidden"} // Jab scroll hoga tabhi chalega
     >
-      {[ServiceSection, BrowsePropertiesSection, Grid, BrowseBlogsSection, InvestmentForm].map(
+      {[DholeraWebsite , ServiceSection, BrowsePropertiesSection, Grid, BrowseBlogsSection, InvestmentForm].map(
         (Component, index) => (
           <motion.div key={index} variants={itemVariants}>
             <Component />
           </motion.div>
         )
       )}
+      
     </motion.div>
         <FloatingButtons />
         <Footer />
