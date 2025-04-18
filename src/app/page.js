@@ -400,6 +400,7 @@ export default function Home() {
         <FloatingButtons />
         <Footer />
       </section>
+      
     </>
   );
 }
